@@ -21,10 +21,8 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    docker.image("$IMAGEN:$BUILD_NUMBER").inside('-u root') {
-                           sh 'apache2ctl -v'
-                        }
-                    }
+                    bat  "docker run --rm --entrypoint apache2ctl $IMAGEN:$BUILD_NUMBER -v"
+                }
             }
         }
         
