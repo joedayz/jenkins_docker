@@ -12,8 +12,6 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    def dockerClient = tool name: 'docker', type: 'hudson.plugins.tool.DockerTool'
-                    env.PATH = "${dockerClient}/bin:${env.PATH}"
                     def newApp = docker.build("${IMAGEN}:${BUILD_NUMBER}")
                 }
             }
