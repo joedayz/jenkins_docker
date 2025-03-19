@@ -1,13 +1,13 @@
 pipeline {
     environment {
-        IMAGEN = "josedom24/myapp"
+        IMAGEN = "joedayz/myjoedayzapp"
         USUARIO = 'USER_DOCKERHUB'
     }
     agent any
     stages {
         stage('Clone') {
             steps {
-                git branch: "main", url: 'https://github.com/josedom24/jenkins_docker.git'
+                git branch: "main", url: 'https://github.com/joedayz/jenkins_docker.git'
             }
         }
         stage('Build') {
