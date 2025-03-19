@@ -2,6 +2,9 @@ pipeline {
     environment {
         IMAGEN = "joedayz/myjoedayzapp"
     }
+    tools {
+        git 'Default'
+    }
     agent any
     stages {
         stage('Clone') {
